@@ -1,3 +1,3 @@
 
-def run(*args, **kwargs):
+def run(args):
     print 'help'
