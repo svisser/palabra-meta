@@ -2,7 +2,7 @@ import constants
 from database import connection, db
 
 
-def run():
+def run(*args, **kwargs):
     result = raw_input("""This will delete all content in the database. Do you wish to continue (yes/no)? """)
     if result != 'yes':
         print "No actions were performed. Exiting."
