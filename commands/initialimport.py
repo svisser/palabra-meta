@@ -1,3 +1,5 @@
+from random import random
+
 import constants
 from database import connection, db
 
@@ -6,7 +8,13 @@ def create_random_grid(width, height):
     grid = {}
     for y in xrange(height):
         for x in xrange(width):
-            grid['{0}-{1}'.format(x, y)] = "TEST"
+            grid['{0}-{1}'.format(x, y)] = {
+                "block": random() < 0.5,
+                "char": "",
+                "clues": {},
+                "number": 0,
+                "void": False,
+            }
     return grid
 
 
