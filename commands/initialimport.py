@@ -2,15 +2,28 @@ import constants
 from database import connection, db
 
 
+def create_random_grid(width, height):
+    grid = {}
+    for y in xrange(height):
+        for x in xrange(width):
+            grid['{0}-{1}'.format(x, y)] = "TEST"
+    return grid
+
+
 def create_crossword(i):
     s_i = str(i)
+    width, height = 15, 15
     return {
-        constants.META_TITLE: "Author " + s_i,
+        constants.META_TITLE: "Title " + s_i,
+        constants.META_AUTHOR: "Author " + s_i,
         constants.META_CREATOR: "Creator " + s_i,
         constants.META_CONTRIBUTOR: "Contributor " + s_i,
         constants.META_RIGHTS: "Copyright " + s_i,
         constants.META_PUBLISHER: "Publisher " + s_i,
         constants.META_DATE: "Date " + s_i,
+        constants.WIDTH: width,
+        constants.HEIGHT: height,
+        constants.GRID: create_random_grid(width, height)
     }
 
 
