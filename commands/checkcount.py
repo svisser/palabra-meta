@@ -55,5 +55,11 @@ def run(args):
         return { count: count };
     }""")
     result = db.crosswords.map_reduce(mapper, reducer, "checkcount")
+    n_checkcount = None
     for d in result.find():
-        print d
+        if d['_id'] == 'checkcount':
+            n_checkcount = d['value']['count']
+    if n_checkcount is not None:
+        print "Total number of checked cells: " + str(int(n_checkcount))
+    else:
+        print "The total number of checked cells could not be determined."
