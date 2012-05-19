@@ -5,16 +5,18 @@ from database import connection, db
 
 
 def create_random_grid(width, height):
-    grid = {}
+    grid = { 'cells': [] }
     for y in xrange(height):
         for x in xrange(width):
-            grid['{0}-{1}'.format(x, y)] = {
+            grid['cells'].append({
+                "x": x,
+                "y": y,
                 "block": random() < 0.5,
                 "char": "",
                 "clues": {},
                 "number": 0,
                 "void": False,
-            }
+            })
     return grid
 
 
