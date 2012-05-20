@@ -24,7 +24,7 @@ def create_crossword(i):
     s_i = str(i)
     width, height = 15, 15
     return {
-        constants.META_IDENTIFIER: s_i,
+        constants.META_IDENTIFIER: str(i + 1),
         constants.META_TITLE: "Title " + s_i,
         constants.META_AUTHOR: "Author " + s_i,
         constants.META_CREATOR: "Creator " + s_i,
