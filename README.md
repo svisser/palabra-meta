@@ -20,3 +20,4 @@ You can pass main.py the following commands:
 * **checkcount**: Computes the total number of checked cells in all crosswords in the database.
 A cell is called 'checked' if it is used in both an Across and Down entry.
 * **view [integer]**: Displays the grid of crossword with the given identifier (1 ... *n*)
+* **wordcount**: Displays the total number of words ordered by word length.
