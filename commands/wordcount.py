@@ -100,10 +100,12 @@ def run(args):
     for d in result.find():
         if d['_id'] == "counts":
             counts = d['value']['counts']
-    if counts is not None:
-        print "Total number of words (ordered by length)"
-        n_counts = {}
-        for key, value in counts.iteritems():
-            n_counts[int(key)] = int(value)
-        for length in sorted(n_counts.keys()):
-            print str(length) + ": " + str(n_counts[length])
+    if counts is None:
+        print "The total number of words by length could not be determined."
+        return
+    print "Total number of words (ordered by length)"
+    n_counts = {}
+    for key, value in counts.iteritems():
+        n_counts[int(key)] = int(value)
+    for length in sorted(n_counts.keys()):
+        print str(length) + ": " + str(n_counts[length])
