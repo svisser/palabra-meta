@@ -77,9 +77,6 @@ def run(args):
                 }
             }
         }
-        for (var k in counts) {
-            print(k, counts[k]);
-        }
         emit("counts", counts); 
     }
     """)
