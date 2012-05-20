@@ -19,3 +19,4 @@ You can pass main.py the following commands:
 * **initialimport [integer]**: This resets the database and creates the given number of crosswords.
 * **checkcount**: Computes the total number of checked cells in all crosswords in the database.
 A cell is called 'checked' if it is used in both an Across and Down entry.
+* **view [integer]**: Displays the grid of crossword with the given identifier (1 ... *n*)
